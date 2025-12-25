@@ -68,6 +68,10 @@
    border: none;
 }
 
+.sign__in__form--passwordGroup--icon {
+   cursor: pointer;
+}
+
 .sign__in__form--button {
    margin-top: 1em;
    padding-top: 0.75em;

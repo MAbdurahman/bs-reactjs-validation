@@ -41,11 +41,25 @@ export default function SignUp() {
             </div>
             <div className='sign__up__form--group'>
                <label htmlFor='email' id='email'>Email</label>
-               <input type='email' id='email' name='email' placeholder='email@example.com' onChange={handleChange}/>
+               <input type='text' id='email' name='email' placeholder='email@example.com' onChange={handleChange}/>
             </div>
             <div className='sign__up__form--group'>
                <label htmlFor='password' id='password'>Password</label>
-               <input type='password' id='password' name='password' placeholder='Enter password' onChange={handleChange}/>
+               <div className='sign__up__form--passwordGroup'>
+                  <input type={isShowing ? 'text' : 'password'} id='password'
+                         name='password' placeholder='Enter password'
+                         onChange={handleChange}/>
+                  {
+                     isShowing ? (
+                        <EyeOutlined className='sign__up__form--passwordGroup--icon'
+                                     onClick={togglePasswordIsShowing}/>
+                     ) : (
+                        <EyeInvisibleOutlined
+                           className='sign__in__form--passwordGroup--icon'
+                           onClick={togglePasswordIsShowing}/>
+                     )
+                  }
+               </div>
             </div>
             <button type='submit' className='sign__up__form--button'>Sign Up</button>
             <p className='sign__up__form--text'>Already have an account? <span

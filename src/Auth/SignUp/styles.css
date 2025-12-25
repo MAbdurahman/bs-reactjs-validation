@@ -51,6 +51,27 @@
    border: 1px solid #ccc;
 }
 
+.sign__up__form--passwordGroup {
+   position: relative;
+   width: 100%;
+   height: 42px;
+   display: flex;
+   justify-content: space-between;
+   padding: 0.20em 1.75em 0.20em 0.20em;
+   background: white;
+   border-radius: 3px;
+   border: 1px solid #ccc;
+}
+
+.sign__up__form--passwordGroup input {
+   background-color: transparent;
+   border: none
+}
+
+.sign__up__form--passwordGroup--icon {
+   cursor: pointer;
+}
+
 .sign__up__form--button {
    margin-top: 1em;
    padding-top: 0.75em;
