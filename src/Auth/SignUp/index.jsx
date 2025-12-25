@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {EyeInvisibleOutlined, EyeOutlined} from '@ant-design/icons';
 import './styles.css';
+import {validateUserInfo} from '../../assets/utils/functionsUtils';
 
 export default function SignUp() {
    const [isShowing, setIsShowing] = useState(false);
@@ -24,6 +25,17 @@ export default function SignUp() {
    const handleSubmit = (e) => {
       e.preventDefault();
       console.log(formData);
+      const {isValid, error} = validateUserInfo(formData.username, formData.fullname, formData.email, formData.password);
+      try {
+         if(!isValid) {
+            console.error(error);
+         }
+         return console.log(formData, 'User successfully signed up!');
+
+      } catch(err) {
+         console.error(err.message);
+
+      }
    };
 
 

@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {EyeInvisibleOutlined, EyeOutlined} from '@ant-design/icons';
 import './styles.css';
+import {validateEmailAndPassword} from '../../assets/utils/functionsUtils';
 
 
 export default function SignIn() {
@@ -23,6 +24,18 @@ export default function SignIn() {
    const handleSubmit = (e) => {
       e.preventDefault();
       console.log(formData);
+      const {isValid, error} = validateEmailAndPassword(formData.email, formData.password);
+
+      try {
+         if (!isValid) {
+            console.error(error);
+         }
+         return console.log(formData, 'User successfully signed in!');
+
+      } catch(err) {
+         console.error(err.message);
+
+      }
    };
 
    return (

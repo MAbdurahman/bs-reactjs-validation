@@ -82,3 +82,45 @@ export function validateUserInfo(userName, fullName, email, password ) {
    }
 
 }
+
+export function validateEmailAndPassword(email, password) {
+   let email_trimmed = email.trim();
+   let password_trimmed = password.trim();
+
+   const email_pattern = /^[!A-Z0-9#$&?*^~_%+-]+(\.[A-Z0-9!_%+-^]+)*?@[A-Z0-9-]+([A-Z0-9.-])*\.[A-Z]{2,}$/i;
+   const password_pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[-+_!@#$%^&*?]).{8,}$/i;
+   const lowercase_pattern = /^(?=.*[a-z])/g;
+   const uppercase_pattern = /^(?=.*[A-Z])/g;
+   const digit_pattern = /^(?=.*\d{1,})/g;
+   const special_pattern = /(?=.*[-+_!@#$%^&*?])/g;
+
+   if (email_trimmed.length === 0) {
+      return {isValid: false, error: 'Email is required!'};
+   }
+   if (!email_trimmed.match(email_pattern)) {
+      return {isValid: false, error: 'Enter a valid email!'};
+   }
+
+   if (password_trimmed.length === 0) {
+      return {isValid: false, error: 'Password is required!'};
+
+   } else if (!password_trimmed.match(lowercase_pattern)) {
+      return {isValid: false, error: 'Password must contain at least one lowercase letter!'};
+
+   } else if (!password_trimmed.match(uppercase_pattern)) {
+      return {isValid: false, error: 'Password must contain at least one uppercase letter!'};
+
+   } else if (!password_trimmed.match(digit_pattern)) {
+      return {isValid: false, error: 'Password must contain at least one number!'};
+
+   } else if (!password_trimmed.match(special_pattern)) {
+      return {isValid: false, error: `Password must include at least one: '-+_!@#$%^&*?'!`};
+
+   } else if (!password_trimmed.match(password_pattern)) {
+      return {isValid: false, error: 'Password must be at least 8 characters long!'};
+
+   } else {
+      return {isValid: true};
+   }
+
+}
