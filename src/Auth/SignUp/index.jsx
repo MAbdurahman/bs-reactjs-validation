@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
+import {EyeInvisibleOutlined, EyeOutlined} from '@ant-design/icons';
 import './styles.css';
 
 export default function SignUp() {
@@ -10,6 +11,10 @@ export default function SignUp() {
       email: '',
       password: '',
    });
+
+   const togglePasswordIsShowing = () => {
+      setIsShowing(!isShowing);
+   };
 
    const handleChange = (e) => {
       const {name, value} = e.target;
@@ -23,27 +28,28 @@ export default function SignUp() {
 
 
    return (
-      <section className='sign_up'>
-         <h3 className='sign_up__title'>Sign Up</h3>
-         <form action='' className='sign_up__form' onSubmit={handleSubmit}>
+      <section className='sign__up'>
+         <h3 className='sign__up__title'>Sign Up</h3>
+         <form action='' className='sign__up__form' onSubmit={handleSubmit}>
             <div className='sign__up__form--group'>
                <label htmlFor='username'>Username</label>
-               <input type='text' id='username' name='username' onChange={handleChange}/>
+               <input type='text' id='username' name='username' placeholder='Enter username' onChange={handleChange}/>
             </div>
             <div className='sign__up__form--group'>
                <label htmlFor='fullname'>Full name</label>
-               <input type='text' id='fullname' name='fullname' onChange={handleChange}/>
+               <input type='text' id='fullname' name='fullname' placeholder='Enter first and last name' onChange={handleChange}/>
             </div>
             <div className='sign__up__form--group'>
                <label htmlFor='email' id='email'>Email</label>
-               <input type='email' id='email' name='email' onChange={handleChange}/>
+               <input type='email' id='email' name='email' placeholder='email@example.com' onChange={handleChange}/>
             </div>
             <div className='sign__up__form--group'>
                <label htmlFor='password' id='password'>Password</label>
-               <input type='password' id='password' name='password' onChange={handleChange}/>
+               <input type='password' id='password' name='password' placeholder='Enter password' onChange={handleChange}/>
             </div>
             <button type='submit' className='sign__up__form--button'>Sign Up</button>
-            <p className='sign__up__form--text'>Already have an account? <Link to='/sign-in'>Sign In</Link></p>
+            <p className='sign__up__form--text'>Already have an account? <span
+               className='sign__up__form--text--link'><Link to='/sign-in'>Sign In</Link></span></p>
          </form>
       </section>
 
