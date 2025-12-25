@@ -26,14 +26,14 @@ export default function SignIn() {
          <form action='' onSubmit={handleSubmit} className='sign__in__form'>
             <div className='sign__in__form--group'>
                <label htmlFor='email'>Email</label>
-               <input type='text' id='email' name='email' onChange={handleChange} />
+               <input type='text' id='email' name='email' placeholder='email@example.com' onChange={handleChange} />
             </div>
             <div className='sign__in__form--group'>
                <label htmlFor='password'>Password</label>
                <input type='password' id='password' name='password' onChange={handleChange}/>
             </div>
             <button type='submit' className='sign__in__form--button'>Sign In</button>
-            <p className='sign__in__form--text'>Do not have an account? <Link to='/sign-up'>Sign Up</Link></p>
+            <p className='sign__in__form--text'>Do not have an account? <span className='sign__in__form--text--link'><Link to='/sign-up'>Sign Up</Link></span></p>
          </form>
       </section>
 
