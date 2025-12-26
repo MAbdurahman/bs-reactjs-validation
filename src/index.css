@@ -145,6 +145,10 @@ a:hover {
    text-align: center;
 }
 
+.bg-semantic-a-200 {
+   background-color: hsl(0, 96%, 48%);
+}
+
 .bg-semantic-a-400 {
    background-color: hsl(0, 96%, 33%);
 }
