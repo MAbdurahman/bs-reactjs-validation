@@ -28,9 +28,9 @@ export default function SignIn() {
 
       try {
          if (!isValid) {
-            console.error(error);
+            return console.error(error);
          }
-         return console.log(formData, 'User successfully signed in!');
+         console.log(formData, 'User successfully signed in!');
 
       } catch(err) {
          console.error(err.message);
