@@ -113,3 +113,8 @@
    color: dodgerblue !important;
    cursor: pointer;
 }
+
+.hide__label {
+   /*visibility: hidden;*/
+   display: none;
+}

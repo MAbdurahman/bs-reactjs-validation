@@ -113,5 +113,6 @@
 }
 
 .hide__label {
-   visibility: hidden;
+   /*visibility: hidden;*/
+   display: none;
 }

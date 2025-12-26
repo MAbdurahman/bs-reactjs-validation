@@ -3,11 +3,13 @@ import {Link} from 'react-router-dom';
 import {EyeInvisibleOutlined, EyeOutlined} from '@ant-design/icons';
 import {validateUserInfo} from '../../assets/utils/functionsUtils';
 import PasswordStrengthMeter from '../../Components/PasswordStrengthMeter/index.jsx';
+import useNotification from '../../assets/hooks/useNotification.jsx';
 import {toast} from 'react-toastify';
 import styles from './SignUp2.module.css';
 
 export default function SignUp2() {
    const [isShowing, setIsShowing] = useState(false);
+   const {updateNotification} = useNotification();
    const [formData, setFormData] = useState({
       username: '',
       fullname: '',
@@ -31,14 +33,13 @@ export default function SignUp2() {
       const {isValid, error} = validateUserInfo(formData.username, formData.fullname, formData.email, formData.password);
       try {
          if(!isValid) {
-            toast.error(error);
-            return;
+            return updateNotification("error", error);
          }
 
-         toast.success('User successfully signed up!');
+         updateNotification('success', 'User successfully signed up!');
 
       } catch(err) {
-         toast.error(err.message);
+         return updateNotification("error", err.message);
       }
    };
    return (
@@ -46,19 +47,19 @@ export default function SignUp2() {
          <h3 className={styles.sign__up__title}>Sign Up</h3>
          <form action='' className={styles.sign__up__form} onSubmit={handleSubmit}>
             <div className={styles.sign__up__form__group}>
-               <label htmlFor='username'>Username</label>
+               <label className={styles.hide__label} htmlFor='username'>Username</label>
                <input type='text' id='username' name='username' placeholder='Enter username' onChange={handleChange}/>
             </div>
             <div className={styles.sign__up__form__group}>
-               <label htmlFor='fullname'>Full name</label>
+               <label className={styles.hide__label} htmlFor='fullname'>Full name</label>
                <input type='text' id='fullname' name='fullname' placeholder='Enter first and last name' onChange={handleChange}/>
             </div>
             <div className={styles.sign__up__form__group}>
-               <label htmlFor='email' id='email'>Email</label>
+               <label className={styles.hide__label} htmlFor='email' id='email'>Email</label>
                <input type='text' id='email' name='email' placeholder='email@example.com' onChange={handleChange}/>
             </div>
             <div className={styles.sign__up__form__group}>
-               <label htmlFor='password' id='password'>Password</label>
+               <label className={styles.hide__label} htmlFor='password' id='password'>Password</label>
                <div className={styles.sign__up__form__passwordGroup}>
                   <input type={isShowing ? 'text' : 'password'} id='password'
                          name='password' placeholder='Enter password'
