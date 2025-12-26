@@ -4,25 +4,29 @@ import { Check, X } from "lucide-react";
 
 
 const PasswordCriteria = ({ password }) => {
+   const lowercase_pattern = /^(?=.*[a-z])/g;
+   const uppercase_pattern = /^(?=.*[A-Z])/g;
+   const digit_pattern = /^(?=.*\d{1,})/g;
+   const special_pattern = /(?=.*[-+_!@#$%^&*?])/g;
    const criteria = [
 
       { label: "At least 8 characters", met: password.length >= 8 },
-      { label: "Contains uppercase letter", met: /[A-Z]/.test(password) },
-      { label: "Contains lowercase letter", met: /[a-z]/.test(password) },
-      { label: "Contains a number", met: /\d/.test(password) },
-      { label: "Contains special character", met: /[^A-Za-z0-9]/.test(password) },
+      { label: "Contains uppercase letter", met: uppercase_pattern.test(password) },
+      { label: "Contains lowercase letter", met: lowercase_pattern.test(password) },
+      { label: "Contains a number", met: digit_pattern.test(password) },
+      { label: "Contains special character", met: special_pattern.test(password) },
    ];
 
    return (
       <div className={styles.criteria__section}>
          {criteria.map((item) => (
-            <div key={item.label} className={styles.flex__alignItems__center__xs}>
+            <div key={item.label} className={styles.flex__align__items__center__xs}>
                {item.met ? (
                   <Check className={styles.criteria__label} />
                ) : (
-                  <X className={styles.criteria__label} />
+                  <X className={styles.criteria__label}/>
                )}
-               <span className={item.met ? `className={styles.text__grey__700}` : `className={styles.text__neutral__500}`}>{item.label}</span>
+               <span className={item.met ? `${styles.text__grey__700}` : `${styles.text__neutral__500}`}>{item.label}</span>
             </div>
          ))}
       </div>
@@ -49,7 +53,7 @@ export default function PasswordStrengthMeter({password}) {
       if (strength === 0) return "bg-semantic-a-200";
       if (strength === 1) return "bg-semantic-a-400";
       if (strength === 2) return "bg-semantic-w-400";
-      if (strength === 3) return "bg-semantic-s-100";
+      if (strength === 3) return "bg-semantic-s-400";
       return "bg-semantic-s-400";
    };
 
@@ -63,7 +67,7 @@ export default function PasswordStrengthMeter({password}) {
 
    return (
       <div className={styles.margin__top__2}>
-         <div className={styles.flex__marginBottom__1}>
+         <div className={styles.flex__margin__bottom__1}>
             <span className={styles.text__grey__900}>Password Strength</span>
             <span
                className={styles.text__grey__800}>{getStrengthText(strength)}</span>
