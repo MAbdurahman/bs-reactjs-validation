@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {EyeInvisibleOutlined, EyeOutlined} from '@ant-design/icons';
 import './styles.css';
 import {validateEmailAndPassword} from '../../assets/utils/functionsUtils';
+import {toast} from 'react-toastify';
 
 
 export default function SignIn() {
@@ -28,12 +29,13 @@ export default function SignIn() {
 
       try {
          if (!isValid) {
-            return console.error(error);
+            toast.error(error);
+            return;
          }
-         console.log(formData, 'User successfully signed in!');
+         toast.success('User successfully signed in!');
 
       } catch(err) {
-         console.error(err.message);
+         toast.error(err.message);
 
       }
    };

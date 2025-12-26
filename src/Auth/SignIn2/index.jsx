@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {EyeInvisibleOutlined, EyeOutlined} from '@ant-design/icons';
 import {validateEmailAndPassword} from '../../assets/utils/functionsUtils';
+import useNotification from '../../assets/hooks/useNotification.jsx';
 import styles from './SignIn2.module.css';
 
 export default function SignIn2() {
    const [isShowing, setIsShowing] = useState(false);
+   const {updateNotification} = useNotification();
    const [formData, setFormData] = useState({
       email: '',
       password: ''
@@ -27,12 +29,12 @@ export default function SignIn2() {
 
       try {
          if (!isValid) {
-            return console.error(error);
+            return updateNotification("error", error);
          }
-         console.log(formData, 'User successfully signed in!');
+         updateNotification('success', 'User successfully signed in!');
 
       } catch(err) {
-         console.error(err.message);
+         return updateNotification("error", err.message);
 
       }
    };
