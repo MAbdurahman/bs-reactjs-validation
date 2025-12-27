@@ -1,18 +1,55 @@
-# React + Vite
+# bs-react-validation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+<p>
+bs-react-validation utilizes React and Bootstrap that sets up a simple routing with 
+four pages: SignUp, SignIn, SignUp2, and SignIn2. The SignUp and SignIn pages 
+utilize react-toastify for user notifications and custom functions to validate user 
+input and display error messages. The SignUp2 and SignIn2 pages utilize custom 
+notification and custom functions to validate user input and display error messages.
+The forms use custom regex expressions to ensure that the user input is valid. Also,
+it uses Ant Design Icons for the password visibility toggle.
+</p>
 
-Currently, two official plugins are available:
+## Features
+- React
+- Bootstrap
+- React Router
+- React Toastify
+- Custom validation functions
+- Custom regex expressions
+- Password strength meter
+- Ant Design Icons
+- Custom hooks
+- Regular stylesheets
+- Modular stylesheets
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### To install dependencies
+```shell
+npm install
+```
+or
+```shell
+yarn or yarn install
+```
+### To run the app
+```shell
+npm run dev
+```
+or
 
-## React Compiler
+```shell
+yarn dev
+```
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Build the app
+```shell
+npm run build
+```
+or
 
-Note: This will impact Vite dev & build performances.
+```shell
+yarn build
+```
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Image](https://github.com/user-attachments/assets/a4b973c9-4e82-42c1-97d9-065f6beec4d1)
