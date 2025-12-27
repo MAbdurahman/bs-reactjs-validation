@@ -69,7 +69,7 @@ export default function SignIn2() {
             <button type='submit' className={styles.sign__in__form__button}>Sign In</button>
             <p className={styles.sign__in__form__text}>Do not have an account? <span
                className={styles.sign__in__form__text__link}><Link
-               to='/sign-up-2'>Sign Up</Link></span></p>
+               to='/sign-up'>Sign Up</Link></span></p>
          </form>
       </section>
    );

@@ -4,7 +4,6 @@ import {EyeInvisibleOutlined, EyeOutlined} from '@ant-design/icons';
 import {validateUserInfo} from '../../assets/utils/functionsUtils';
 import PasswordStrengthMeter from '../../Components/PasswordStrengthMeter/index.jsx';
 import useNotification from '../../assets/hooks/useNotification.jsx';
-import {toast} from 'react-toastify';
 import styles from './SignUp2.module.css';
 
 export default function SignUp2() {
