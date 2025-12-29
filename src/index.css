@@ -181,6 +181,14 @@ a:hover {
    animation-fill-mode: forwards;
 }
 
+.move-back-to-right {
+   animation-name: move-back-to-right;
+   animation-duration: 1s;
+   animation-iteration-count: 1;
+   animation-timing-function: ease;
+   animation-fill-mode: forwards;
+}
+
 @keyframes move-in-from-right {
    0% {
       opacity: 0;
@@ -208,5 +216,18 @@ a:hover {
    }
    100% {
       transform: translateX(-2000px);
+   }
+}
+
+@keyframes move-back-to-right {
+   0% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+   50% {
+      transform: translateX(-50px);
+   }
+   100% {
+      transform: translateX(2000px);
    }
 }
