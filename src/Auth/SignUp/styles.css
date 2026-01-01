@@ -15,6 +15,18 @@
    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.185);
 }
 
+@media screen and (max-width: 520px) {
+   .sign__up {
+      width: 390px !important;
+   }
+}
+
+@media screen and (max-width: 390px) {
+   .sign__up {
+      width: 320px !important;
+   }
+}
+
 .sign__up__title {
    margin-top: 1em;
    margin-bottom: 0;
