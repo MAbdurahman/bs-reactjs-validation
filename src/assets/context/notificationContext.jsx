@@ -10,7 +10,8 @@ export default function NotificationProvider({children}) {
 
    const [notification, setNotification] = useState('');
    const [classes, setClasses] = useState('');
-   const [exitToLeft, setExitToLeft] = useState(false);
+   const [moveBackToRight, setMoveBackToRight] = useState(false);
+   // const [exitToLeft, setExitToLeft] = useState(false);
 
 
    const updateNotification = (type, value) => {
@@ -38,11 +39,13 @@ export default function NotificationProvider({children}) {
       setNotification(value);
 
       timeoutID1 = setTimeout(() => {
-         setExitToLeft(true);
+         // setExitToLeft(true);
+         setMoveBackToRight(true);
 
          timeoutID2 = setTimeout(() => {
             setNotification('');
-            setExitToLeft(false);
+/*            setExitToLeft(false);*/
+            setMoveBackToRight(false);
          }, 1500);
 
       }, 3500);
@@ -53,7 +56,7 @@ export default function NotificationProvider({children}) {
          {children}
          {notification && (<div className='utils-fixed'>
             <div
-               className={`${exitToLeft ? 'exit-to-left' : 'move-in-from-right'}` + ' utils-radius-shadow'}>
+               className={`${moveBackToRight ? 'move-back-to-right' : 'move-in-from-right'}` + ' utils-radius-shadow'}>
                <p className={classes + ' utils-notification-paragraph utils-notify utils-center-text'}>
                   {notification}
                </p>
