@@ -22,11 +22,11 @@ const PasswordCriteria = ({ password }) => {
          {criteria.map((item) => (
             <div key={item.label} className={styles.flex__align__items__center__xs}>
                {item.met ? (
-                  <Check className={styles.criteria__label} />
+                  <Check className={styles.criteria__success} />
                ) : (
                   <X className={styles.criteria__label}/>
                )}
-               <span className={item.met ? `${styles.text__grey__700}` : `${styles.text__neutral__500}`}>{item.label}</span>
+               <span className={item.met ? `${styles.text__success__400}` : `${styles.text__neutral__500}`}>{item.label}</span>
             </div>
          ))}
       </div>
