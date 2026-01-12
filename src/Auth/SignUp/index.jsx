@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {EyeInvisibleOutlined, EyeOutlined} from '@ant-design/icons';
 import './styles.css';
-import {validateUserInfo} from '../../assets/utils/functionsUtils';
+import {validateUserInfo, getFirstName} from '../../assets/utils/functionsUtils';
 import {toast} from 'react-toastify';
 
 
@@ -34,8 +34,8 @@ export default function SignUp() {
            toast.error(error);
            return;
          }
-
-         toast.success('User successfully signed up!');
+         const firstName = getFirstName(formData.fullname);
+         toast.success(`${firstName} successfully signed up!`);
 
       } catch(err) {
          toast.error(err.message);

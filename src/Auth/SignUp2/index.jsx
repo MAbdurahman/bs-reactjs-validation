@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {EyeInvisibleOutlined, EyeOutlined} from '@ant-design/icons';
-import {validateUserInfo} from '../../assets/utils/functionsUtils';
+import {validateUserInfo, getFirstName} from '../../assets/utils/functionsUtils';
 import PasswordStrengthMeter from '../../Components/PasswordStrengthMeter/index.jsx';
 import useNotification from '../../assets/hooks/useNotification.jsx';
 import styles from './SignUp2.module.css';
@@ -34,8 +34,8 @@ export default function SignUp2() {
          if(!isValid) {
             return updateNotification("error", error);
          }
-
-         updateNotification('success', 'User successfully signed up!');
+         const firstName = getFirstName(formData.fullname);
+         updateNotification('success', `${firstName} successfully signed up!`);
 
       } catch(err) {
          return updateNotification("error", err.message);
