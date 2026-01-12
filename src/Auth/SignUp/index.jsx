@@ -47,21 +47,21 @@ export default function SignUp() {
       <section className='sign__up'>
          <h3 className='sign__up__title'>Sign Up</h3>
          <form action='' className='sign__up__form' onSubmit={handleSubmit}>
-            <div className='sign__up__form--group'>
+            <div className='sign__up__form--group' tabIndex='0'>
                <label htmlFor='username'>Username</label>
                <input type='text' id='username' name='username' placeholder='Enter username' onChange={handleChange}/>
             </div>
-            <div className='sign__up__form--group'>
+            <div className='sign__up__form--group' tabIndex='1'>
                <label htmlFor='fullname'>Full name</label>
                <input type='text' id='fullname' name='fullname' placeholder='Enter first and last name' onChange={handleChange}/>
             </div>
-            <div className='sign__up__form--group'>
+            <div className='sign__up__form--group' tabIndex='2'>
                <label htmlFor='email' id='email'>Email</label>
                <input type='text' id='email' name='email' placeholder='email@example.com' onChange={handleChange}/>
             </div>
             <div className='sign__up__form--group'>
                <label htmlFor='password' id='password'>Password</label>
-               <div className='sign__up__form--passwordGroup'>
+               <div className='sign__up__form--passwordGroup' tabIndex='3'>
                   <input type={isShowing ? 'text' : 'password'} id='password'
                          name='password' placeholder='Enter password'
                          onChange={handleChange}/>

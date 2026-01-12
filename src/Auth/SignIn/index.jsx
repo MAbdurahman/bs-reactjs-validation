@@ -44,14 +44,14 @@ export default function SignIn() {
       <section className='sign__in'>
          <h3 className='sign__in__title'>Sign In</h3>
          <form action='' onSubmit={handleSubmit} className='sign__in__form'>
-            <div className='sign__in__form--group'>
+            <div className='sign__in__form--group' tabIndex='0'>
                <label htmlFor='email'>Email</label>
                <input type='text' id='email' name='email'
                       placeholder='email@example.com' onChange={handleChange}/>
             </div>
             <div className='sign__in__form--group'>
                <label htmlFor='password'>Password</label>
-               <div className='sign__in__form--passwordGroup'>
+               <div className='sign__in__form--passwordGroup' tabIndex='1'>
                   <input type={isShowing ? 'text' : 'password'} id='password'
                          name='password' placeholder='Enter password'
                          onChange={handleChange}/>

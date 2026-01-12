@@ -45,21 +45,21 @@ export default function SignUp2() {
       <section className={styles.sign__up}>
          <h3 className={styles.sign__up__title}>Sign Up</h3>
          <form action='' className={styles.sign__up__form} onSubmit={handleSubmit}>
-            <div className={styles.sign__up__form__group}>
+            <div className={styles.sign__up__form__group} tabIndex='0' >
                <label className={styles.hide__label} htmlFor='username'>Username</label>
                <input type='text' id='username' name='username' placeholder='Enter username' onChange={handleChange}/>
             </div>
-            <div className={styles.sign__up__form__group}>
+            <div className={styles.sign__up__form__group} tabIndex='1'>
                <label className={styles.hide__label} htmlFor='fullname'>Full name</label>
                <input type='text' id='fullname' name='fullname' placeholder='Enter first and last name' onChange={handleChange}/>
             </div>
-            <div className={styles.sign__up__form__group}>
+            <div className={styles.sign__up__form__group} tabIndex='2'>
                <label className={styles.hide__label} htmlFor='email' id='email'>Email</label>
                <input type='text' id='email' name='email' placeholder='email@example.com' onChange={handleChange}/>
             </div>
-            <div className={styles.sign__up__form__group}>
+            <div className={styles.sign__up__form__group} >
                <label className={styles.hide__label} htmlFor='password' id='password'>Password</label>
-               <div className={styles.sign__up__form__passwordGroup}>
+               <div className={styles.sign__up__form__passwordGroup} tabIndex='3'>
                   <input type={isShowing ? 'text' : 'password'} id='password'
                          name='password' placeholder='Enter password'
                          onChange={handleChange}/>

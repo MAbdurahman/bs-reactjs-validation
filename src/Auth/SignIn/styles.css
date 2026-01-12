@@ -60,7 +60,18 @@
    padding: 0.5em 1.75em 0.5em 0.5em;
    border-radius: 3px;
    border: 1px solid #ccc;
+   transition: all 0.333ms ease-in-out;
 }
+
+.sign__in__form--group input:focus {
+   border-width: 2px;
+   border-color: hsl(210.19, 0%, 38%);
+}
+
+/*.sign__in__form--group:has(input:focus) {
+   border-width: 2px;
+   border-color: hsl(210.19, 0%, 38%);
+}*/
 
 .sign__in__form--passwordGroup {
    position: relative;
@@ -74,9 +85,16 @@
    border: 1px solid #ccc;
 
 }
+
+.sign__in__form--passwordGroup:has(input:focus) {
+   border: 2px solid hsl(210.19, 0%, 38%);
+}
+
+
 .sign__in__form--passwordGroup input {
    background-color: transparent;
    border: none;
+   transition: all 0.333ms ease-in-out;
 }
 
 .sign__in__form--passwordGroup--icon {

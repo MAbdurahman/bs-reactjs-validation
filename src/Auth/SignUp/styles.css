@@ -52,6 +52,11 @@
    font-size: 1.025rem;
 }
 
+.sign__up__form--group input:focus {
+   border-width: 2px;
+   border-color: hsl(210.19, 0%, 38%);
+}
+
 .sign__up__form--group label {
    font-weight: 600;
    color: hsl(211.2, 0%, 28%);
@@ -73,6 +78,10 @@
    background: white;
    border-radius: 3px;
    border: 1px solid #ccc;
+}
+
+.sign__up__form--passwordGroup:has(input:focus) {
+   border: 2px solid hsl(210.19, 0%, 38%);
 }
 
 .sign__up__form--passwordGroup input {

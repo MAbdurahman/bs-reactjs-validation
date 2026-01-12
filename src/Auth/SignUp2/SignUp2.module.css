@@ -61,6 +61,12 @@
    padding: 0.5em 1.75em 0.5em 0.5em;
    border-radius: 3px;
    border: 1px solid #ccc;
+
+}
+
+.sign__up__form__group:has(input:focus)  {
+   border-radius: 3px;
+   border: 2px solid hsl(210.19, 0%, 38%);
 }
 
 .sign__up__form__passwordGroup {
@@ -73,12 +79,24 @@
    background: white;
    border-radius: 3px;
    border: 1px solid #ccc;
+   transition: all 0.333ms ease-in-out;
 }
 
 .sign__up__form__passwordGroup input {
+   width: 100%;
    background-color: transparent;
-   border: none
+   border: none;
+
 }
+
+.sign__up__form__passwordGroup input:focus {
+   border: none;
+}
+
+.sign__up__form__passwordGroup:has(input:focus) {
+   /*border: 2px solid hsl(210.19, 0%, 38%);*/
+}
+
 
 .sign__up__form__passwordGroup__icon {
    cursor: pointer;
